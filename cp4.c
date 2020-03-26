@@ -2,78 +2,93 @@
 #define TRUE 1
 #define FALSE 0
 
+#include "limits.h"
 #include <stdio.h>
 int main()
 {
 	// os fatores iniciais
-	long int next = 0;
-	long int n = 0;;
-	long int p1 = 2, p2 = 3, p3 = 5, p4 = 7;
-
-	do
+	int  next = 0;
+	int  N = 0;;
+	int  p1 = 2, p2 = 3, p3 = 5, p4 = 7;
+		do
 	{
 		p1 = 2, p2 = 3, p3 = 5, p4 = 7;
 		printf("[Max 8 digitos] Entre com N: ");
-		int q = scanf("%ld", &n);
-		if ((q == 1) && (n!=0))
+		int q = scanf("%d", &N);
+		//printf("[Aguarde...] Calculando para N = %d\n\n", N);
+
+		if ((q == 1) && (N!=0))
 		{
 			int processado = FALSE;
 			do
 			{
-				if (((p1 * p1) + (p2 * p2) + (p3 * p3) + (p4 * p4)) == n)
+				int prd = (p1 * p1) + (p2 * p2) + (p3 * p3) + (p4 * p4);
+				//printf("p=[%d,%d,%d,%d] Produto = %d N = %d\n",
+				//	p1, p2, p3, p4, prd, N);
+				if (prd == N)
 				{	// achou a combinacao
-					printf("%ld^2 + %ld^2 + %ld^2 + %ld^2\n", p1, p2, p3, p4);
+					printf("%d^2 + %d^2 + %d^2 + %d^2\n", p1, p2, p3, p4);
 					processado = TRUE;
 				}
 				else
 				{
-					// p4 e o ultimo primo
-					// nas proximas linhas vamos definir next como
-					// sendo... o proximo primo depois de p4
-					int achou_proximo = FALSE;
-					next = 0;
-					for (long int i = p4 + 2; !achou_proximo; i = i + 2)
+					if (prd < N)
 					{
-						long int maior = 0;
-						for (maior = 7; (maior * maior) < i; maior += 1);
-						maior = maior - 1; // passou 1 da conta no for
-						long int fator = 3;
-						while (fator <= maior)
+						// p4 e o ultimo primo
+						// nas proximas linhas vamos definir next como
+						// sendo... o proximo primo depois de p4
+						int achou_proximo = FALSE;
+						next = 0;
+						for (int i = p4 + 2; !achou_proximo; i = i + 2)
 						{
-							if (i % fator == 0)
-							{	// entao 'i' nao e primo
-								// forca sair do loop
-								fator = 100000000; // tanto faz
-							}
-							else
+							//int smaior = (int)sqrt((double)i); era isso
+							int  maior = 0;
+							for (maior = 7; (maior * maior) < i; maior += 1);
+							// passou 1 da conta se nao for um quadrado perfeito
+							if (maior * maior != i) maior = maior - 1;
+							int  fator = 3;
+							while (fator <= maior)
 							{
-								fator = fator + 2;
-							}
-						}	// end while
-						if (fator != (100000000))
+								if (i % fator == 0)
+								{	// entao 'i' nao e primo
+									// forca sair do loop
+									fator = 100000000L; // tanto faz
+								}
+								else
+								{
+									fator = fator + 2;
+								}
+							}	// end while
+							if (fator != (100000000L))
+							{
+								next = i;
+								achou_proximo = TRUE;
+							};	// if()
+						};	// for()
+						// saindo daqui temos o primo depois de p4 em next
+						if (next > N)
 						{
-							next = i;
-							achou_proximo = TRUE;
-						};	// if()
-					};	// for()
-					// saindo daqui temos o primo depois de p4 em next
-					if (next > n)
-					{
-						printf("Nao e possivel a representacao\n");
-						processado = TRUE;
+							printf("Nao e possivel a representacao\n");
+							processado = TRUE;
+						}
+						else
+						{
+							// se ainda da, rodamos a tabela de primos
+							p1 = p2;
+							p2 = p3;
+							p3 = p4;
+							p4 = next;
+							// e continuamos
+						}
 					}
 					else
 					{
-						// se ainda da, rodamos a tabela de primos
-						p1 = p2;
-						p2 = p3;
-						p3 = p4;
-						p4 = next;
-						// e continuamos
+						printf("Nao e possivel a representacao\n");
+						processado = TRUE;
 					};	// if()
 				};	// if()
 			} while (processado == FALSE);
 		};	// if()
-	} while (n != 0);
+	} while (N != 0);
 	printf("Encerrando...\n");
 };	// main()

@@ -150,6 +150,7 @@
     <ClCompile Include="cp4.c" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="cp4-saida.txt" />
     <Text Include="original.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,0 +1,21 @@
+[Max 8 digitos] Entre com N: 87
+2^2 + 3^2 + 5^2 + 7^2
+[Max 8 digitos] Entre com N: 204
+3^2 + 5^2 + 7^2 + 11^2
+[Max 8 digitos] Entre com N: 364
+5^2 + 7^2 + 11^2 + 13^2
+[Max 8 digitos] Entre com N: 628
+7^2 + 11^2 + 13^2 + 17^2
+[Max 8 digitos] Entre com N: 940
+11^2 + 13^2 + 17^2 + 19^2
+[Max 8 digitos] Entre com N: 1348
+13^2 + 17^2 + 19^2 + 23^2
+[Max 8 digitos] Entre com N: 9922660
+1567^2 + 1571^2 + 1579^2 + 1583^2
+[Max 8 digitos] Entre com N: 9000000
+Nao e possivel a representacao
+[Max 8 digitos] Entre com N: 41668
+97^2 + 101^2 + 103^2 + 107^2
+[Max 8 digitos] Entre com N: 0
+Encerrando...
+

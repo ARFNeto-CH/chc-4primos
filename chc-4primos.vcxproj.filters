@@ -23,5 +23,8 @@
     <Text Include="original.txt">
       <Filter>Source Files</Filter>
     </Text>
+    <Text Include="cp4-saida.txt">
+      <Filter>Source Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>
