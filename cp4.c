@@ -10,7 +10,7 @@ int main()
 	int  next = 0;
 	int  N = 0;;
 	int  p1 = 2, p2 = 3, p3 = 5, p4 = 7;
-		do
+	do
 	{
 		p1 = 2, p2 = 3, p3 = 5, p4 = 7;
 		printf("[Max 8 digitos] Entre com N: ");
@@ -52,14 +52,14 @@ int main()
 								if (i % fator == 0)
 								{	// entao 'i' nao e primo
 									// forca sair do loop
-									fator = 100000000L; // tanto faz
+									fator = 100000000; // tanto faz
 								}
 								else
 								{
 									fator = fator + 2;
 								}
 							}	// end while
-							if (fator != (100000000L))
+							if (fator != (100000000))
 							{
 								next = i;
 								achou_proximo = TRUE;
