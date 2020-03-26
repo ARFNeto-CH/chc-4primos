@@ -6,12 +6,13 @@
 int main()
 {
 	// os fatores iniciais
-	long int p1 = 2, p2 = 3, p3 = 5, p4 = 7;
 	long int next = 0;
 	long int n = 0;;
+	long int p1 = 2, p2 = 3, p3 = 5, p4 = 7;
 
 	do
 	{
+		p1 = 2, p2 = 3, p3 = 5, p4 = 7;
 		printf("[Max 8 digitos] Entre com N: ");
 		int q = scanf("%ld", &n);
 		if ((q == 1) && (n!=0))
